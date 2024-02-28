@@ -17,7 +17,7 @@ type GetBlockResponse struct {
 	Result  interface{} `json:"result"`
 }
 
-func sendRequest(method string, params string) (GetBlockResponse, error) {
+func sendRequest(method, params string) (GetBlockResponse, error) {
 	requestBody := `{"jsonrpc": "2.0", "method": "` + method + `", "params": [` + params + `], "id": "getblock.io"}`
 
 	req, err := http.NewRequest(http.MethodPost, os.Getenv("GET_BLOCK_URL"), strings.NewReader(requestBody))
