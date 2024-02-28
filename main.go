@@ -44,7 +44,7 @@ func main() {
 			result += ", "
 		}
 
-		result += strconv.Itoa(i+1) + ") " + topAddress.Address + ": " + strconv.Itoa(topAddress.Activity)
+		result += fmt.Sprintf("%d) %s: %d", i+1, topAddress.Address, topAddress.Activity)
 	}
 
 	log.Info().Msg(result)
